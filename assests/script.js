@@ -12,18 +12,16 @@ $(".time-block").each(function() {
   }
 });
 
-
-$(".description").each(function() {
-  var timeBlock = $(this).parent().attr("id");
-  var savedData = localStorage.getItem(timeBlock);
-  if (savedData) {
-    $(this).val(savedData);
-  }
-});
-
-
 $(".saveBtn").on("click", function() {
   var timeBlock = $(this).parent().attr("id");
   var description = $(this).siblings(".description").val();
   localStorage.setItem(timeBlock, description);
-});
+}); 
+
+$(".description").each(function() {
+    var timeBlock = $(this).parent().attr("id");
+    var savedData = localStorage.getItem(timeBlock);
+    if (savedData) {
+      $(this).val(savedData);
+    }
+  });
